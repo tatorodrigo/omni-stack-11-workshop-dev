@@ -5,16 +5,15 @@ body {
   margin: 0;
 }
 
+body.hide-scroll {
+  overflow: hidden;
+}
+
 p,
 .description {
   font-size: 16px;
   letter-spacing: 0.1px;
   line-height: 24px;
-}
-
-#modal.hide {
-  visibility: hidden;
-  opacity: 0;
 }
 
 .hide {
@@ -29,11 +28,12 @@ p,
 }
 
 #intro {
-  margin-right: 20px;
+  margin-right: 64px;
   width: 300px;
 }
 
-button {
+button,
+a {
   background: none;
   border: none;
   color: #ff5e84;
@@ -43,22 +43,29 @@ button {
   letter-spacing: 0.1px;
   line-height: 18px;
   outline: none;
+  text-decoration: none;
 }
 
-button:hover {
+button:hover,
+a:hover {
   text-decoration: underline;
 }
 
-button.fat {
-  background: #ff5e84;
-  border-radius: 6px;
-  color: white;
+.button {
+  align-items: center;
+  background-color: #ff5e84;
+  border-radius: 8px;
+  color: #fff;
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
   height: 40px;
+  justify-content: center;
   width: 150px;
-  box-shadow: 0px 8px 16px #ff5e8455;
 }
 
-button.fat:hover {
+.button:hover {
+  background-color: #0984e3;
   text-decoration: none;
 }
 
@@ -132,9 +139,18 @@ footer a:hover {
   transition: 400ms;
 }
 
+#modal.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#modal.show-scroll {
+  overflow: auto;
+}
+
 #modal .content {
   color: #fff;
-  margin-top: 128px;
+  margin-top: 15%;
 }
 
 #modal .content h1 {
@@ -146,7 +162,7 @@ footer a:hover {
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr 1fr;
-  margin: 0 auto;
+  margin: 0 auto 15%;
   max-width: 800px;
   width: 80%;
 }
@@ -202,4 +218,66 @@ form button:hover {
   background: #0984e3;
   color: #fff;
   text-decoration: none;
+}
+
+/* ideias.html */
+#page-ideias #container {
+  display: block;
+}
+
+#page-ideias header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#page-ideias nav {
+  display: flex;
+  align-items: center;
+}
+
+#page-ideias nav li {
+  list-style-type: none;
+  margin-right: 16px;
+}
+
+#page-ideias nav li a {
+  color: #25282b;
+}
+
+#page-ideias nav li a.button {
+  color: white;
+}
+
+#page-ideias nav li:last-child {
+  margin-right: 0;
+}
+
+section#title {
+  text-align: center;
+}
+
+section#title p {
+  margin: 0;
+  opacity: 0.7;
+}
+
+section#title h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+section#ideas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+section#ideas .idea {
+  margin: 0;
+}
+
+section#title,
+section#ideas,
+footer {
+  margin-top: 64px;
 }
